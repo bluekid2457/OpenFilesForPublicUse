@@ -32,7 +32,13 @@ const generateResponse = (chatElement) => {
     }
     console.log("Problem Inc")
     // Send POST request to API, get response and set the reponse as paragraph text
-    fetch("https://d7quvtbtqi.execute-api.us-west-2.amazonaws.com/default/testFunc1?company=Offrd&uinput=What+is+offrd").then(res => res.text()).then(data => {
+    console.log(userMessage)
+    company_name = (window.location != window.parent.location)
+    ? document.referrer
+    : document.location.href;
+    company_name= company_name.split("/")[2]
+    console.log(company_name)
+    fetch("https://d7quvtbtqi.execute-api.us-west-2.amazonaws.com/default/testFunc1?company="+company_name +"&uinput="+userMessage).then(res => res.text()).then(data => {
         // console.log("Problem 0")    
         console.log(data)
         // console.log("Problem 1")
