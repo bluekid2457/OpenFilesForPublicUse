@@ -36,7 +36,7 @@ const generateResponse = (chatElement) => {
     company_name = (window.location != window.parent.location)
     ? document.referrer
     : document.location.href;
-    company_name= company_name.split("/")[2]
+    // company_name= company_name.split("/")[2]
     console.log(company_name)
     fetch("https://d7quvtbtqi.execute-api.us-west-2.amazonaws.com/default/testFunc1?company="+company_name +"&uinput="+userMessage).then(res => res.text()).then(data => {
         // console.log("Problem 0")    
