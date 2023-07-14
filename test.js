@@ -37,7 +37,7 @@ const generateResponse = (chatElement) => {
     ? document.referrer
     : document.location.href;
     if (company_name.includes("127.0.0.1")){
-        company = "localhost"
+        company_name = "localhost"
     }
     else{
         company_name= company_name.split("/")[2]
