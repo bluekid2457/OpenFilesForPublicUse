@@ -47,7 +47,8 @@ const generateResponse = (chatElement) => {
         company_name= company_name.split("/")[2]
     }
     
-    console.log(company_name);
+    console.log(company_name.length);
+    console.log((typeof (company_name) == 'undefined'));
     fetch("https://d7quvtbtqi.execute-api.us-west-2.amazonaws.com/default/testFunc1?company="+company_name +"&uinput="+userMessage).then(res => res.text()).then(data => {
         // console.log("Problem 0")    
         console.log(data)
