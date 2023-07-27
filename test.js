@@ -36,7 +36,7 @@ const generateResponse = (chatElement) => {
     company_name = (window.location != window.parent.location)
     ? document.referrer
     : document.location.href;
-    if (company_name.includes("127.0.0.1")){
+    if (company_name.includes("127.0.0.1") || company_name.includes("localhost")){
         company_name = "localhost"
     }
     else{
