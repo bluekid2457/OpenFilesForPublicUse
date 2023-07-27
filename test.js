@@ -23,10 +23,10 @@ function submitOnEnter(event) {
 
 document.getElementById("usermsg").addEventListener("keydown", submitOnEnter);
 
-document.getElementById("form").addEventListener("send-btn", (event) => {
-    event.preventDefault();
-    console.log("form submitted");
-});
+// document.getElementById("form").addEventListener("send-btn", (event) => {
+//     event.preventDefault();
+//     console.log("form submitted");
+// });
 
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
