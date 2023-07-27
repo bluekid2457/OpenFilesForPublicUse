@@ -8,6 +8,26 @@ let userMessage = null; // Variable to store user's message
 const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
 const inputInitHeight = chatInput.scrollHeight;
 
+function submitOnEnter(event) {
+    console.log("T!");
+    if (event.which === 13) {
+        console.log("T2");
+        if (!event.repeat) {
+            const newEvent = new Event("submit", {cancelable: true});
+            event.target.form.dispatchEvent(newEvent);
+        }
+
+        event.preventDefault(); // Prevents the addition of a new line in the text field
+    }
+}
+
+document.getElementById("usermsg").addEventListener("keydown", submitOnEnter);
+
+document.getElementById("form").addEventListener("send-btn", (event) => {
+    event.preventDefault();
+    console.log("form submitted");
+});
+
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
@@ -36,11 +56,11 @@ const generateResponse = (chatElement) => {
     company_name = (window.location != window.parent.location)
     ? document.referrer
     : document.location.href;
-    console.log(company_name);
-    console.log(typeof(company_name));
-    console.log(company_name == null);
-    console.log(company_name.length);
-    console.log((typeof (company_name) == 'undefined'));
+    // console.log(company_name);
+    // console.log(typeof(company_name));
+    // console.log(company_name == null);
+    // console.log(company_name.length);
+    // console.log((typeof (company_name) == 'undefined'));
     if (company_name.includes("127.0.0.1") || company_name.includes("localhost") || company_name.length == 0 || (typeof (company_name) == 'undefined')){
         company_name = "localhost"
     }
