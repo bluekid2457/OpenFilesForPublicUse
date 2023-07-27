@@ -8,6 +8,11 @@ let userMessage = null; // Variable to store user's message
 const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
 const inputInitHeight = chatInput.scrollHeight;
 
+// document.getElementById("form").addEventListener("send-btn", (event) => {
+//     event.preventDefault();
+//     console.log("form submitted");
+// });
+
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
     const chatLi = document.createElement("li");
@@ -23,13 +28,13 @@ const generateResponse = (chatElement) => {
     const messageElement = chatElement.querySelector("p");
 
     // Define the properties and message for the API request
-    const requestOptions = {
-        method: "GET",
-        body: JSON.stringify({
-            company: "Offrd",
-            uinput:"What is offrd?",
-        })
-    }
+    // const requestOptions = {
+    //     method: "GET",
+    //     body: JSON.stringify({
+    //         company: "Offrd",
+    //         uinput:"What is offrd?",
+    //     })
+    // }
     console.log("Problem Inc")
     // Send POST request to API, get response and set the reponse as paragraph text
     console.log(userMessage)
@@ -68,6 +73,7 @@ const generateResponse = (chatElement) => {
 }
 
 const handleChat = () => {
+    console.log("handling");
     userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
     if(!userMessage) return;
 
@@ -90,6 +96,7 @@ const handleChat = () => {
 
 chatInput.addEventListener("input", () => {
     // Adjust the height of the input textarea based on its content
+    console.log("CHanging");
     chatInput.style.height = `${inputInitHeight}px`;
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
@@ -97,7 +104,8 @@ chatInput.addEventListener("input", () => {
 chatInput.addEventListener("keydown", (e) => {
     // If Enter key is pressed without Shift key and the window 
     // width is greater than 800px, handle the chat
-    if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+    console.log("ENTER");
+    if(e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         handleChat();
     }
