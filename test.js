@@ -46,6 +46,7 @@ const generateResponse = (chatElement) => {
     // console.log(company_name == null);
     // console.log(company_name.length);
     // console.log((typeof (company_name) == 'undefined'));
+
     if (company_name.includes("127.0.0.1") ||company_name.includes("localhost") || company_name.length == 0 || (typeof (company_name) == 'undefined')){
         company_name = "localhost"
     }
@@ -54,6 +55,7 @@ const generateResponse = (chatElement) => {
     }
     
     console.log(company_name.length);
+    console.log(company_name);
     console.log((typeof (company_name) == 'undefined'));
     fetch("https://d7quvtbtqi.execute-api.us-west-2.amazonaws.com/default/testFunc1?company="+company_name +"&uinput="+userMessage).then(res => res.text()).then(data => {
         // console.log("Problem 0")    
