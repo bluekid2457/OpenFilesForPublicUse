@@ -29,6 +29,8 @@ const generateResponse = (chatElement) => {
     company_name = (window.location != window.parent.location)
             ? document.referrer
             : document.location.href;
+    console.log(window.parent.location.href);
+    console.log(parent.document.location.href);
     // company_name = window.location.href;
 
     // Define the properties and message for the API request
@@ -39,7 +41,7 @@ const generateResponse = (chatElement) => {
     //         uinput:"What is offrd?",
     //     })
     // }
-    console.log("Problem Inc")
+    console.log("Problem Inc 2")
     // Send POST request to API, get response and set the reponse as paragraph text
     console.log(userMessage) 
     console.log(company_name.length);
