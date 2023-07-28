@@ -29,7 +29,8 @@ const generateResponse = (chatElement) => {
     company_name = (window.location != window.parent.location)
             ? document.referrer
             : document.location.href;
-    console.log(window.parent.location.href);
+    console.log(company_name);
+    // console.log(window.parent.location.href);
     console.log(parent.document.location.href);
     // company_name = window.location.href;
 
