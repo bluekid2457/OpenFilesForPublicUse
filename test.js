@@ -26,6 +26,7 @@ const createChatLi = (message, className) => {
 const generateResponse = (chatElement) => {
     const API_URL = "https://d7quvtbtqi.execute-api.us-west-2.amazonaws.com/default/testFunc1";
     const messageElement = chatElement.querySelector("p");
+    company_name = window.location.href;
 
     // Define the properties and message for the API request
     // const requestOptions = {
