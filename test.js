@@ -37,10 +37,10 @@ const generateResponse = (chatElement) => {
     // }
     console.log("Problem Inc")
     // Send POST request to API, get response and set the reponse as paragraph text
-    console.log(userMessage)
-    company_name = (window.location != window.parent.location)
-    ? document.referrer
-    : document.location.href;
+    console.log(userMessage) 
+    console.log(company_name.length);
+    console.log(company_name);
+    console.log((typeof (company_name) == 'undefined'));
     // console.log(company_name);
     // console.log(typeof(company_name));
     // console.log(company_name == null);
