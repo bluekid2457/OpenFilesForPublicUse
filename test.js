@@ -41,6 +41,8 @@ const generateResponse = (chatElement) => {
     console.log(company_name.length);
     console.log(company_name);
     console.log((typeof (company_name) == 'undefined'));
+    console.log(company_name.length == 0)
+    console.log("Checking")
     // console.log(company_name);
     // console.log(typeof(company_name));
     // console.log(company_name == null);
