@@ -46,7 +46,7 @@ const generateResponse = (chatElement) => {
     // console.log(company_name == null);
     // console.log(company_name.length);
     // console.log((typeof (company_name) == 'undefined'));
-    if (company_name.includes("127.0.0.1") || company_name.includes("localhost") || company_name.length == 0 || (typeof (company_name) == 'undefined')){
+    if (company_name.includes("127.0.0.1") ||company_name.includes("localhost") || company_name.length == 0 || (typeof (company_name) == 'undefined')){
         company_name = "localhost"
     }
     else{
