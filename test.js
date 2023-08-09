@@ -34,10 +34,8 @@ const generateResponse = (chatElement) => {
     // company_name = window.location.href;
     company_name =  document.location.ancestorOrigins[0];
     console.log("Printing");
-    console.log(window.frameElement.getAttribute("Name"));
-    console.log(window.frameElement.getAttribute("Title"));
-    console.log(window.frameElement.getAttribute("id"));
     console.log(window.name);
+    company_name = window.name;
     // Define the properties and message for the API request
     // const requestOptions = {
     //     method: "GET",
@@ -60,12 +58,12 @@ const generateResponse = (chatElement) => {
     // console.log(company_name.length);
     // console.log((typeof (company_name) == 'undefined'));
 
-    if (company_name.includes("127.0.0.1") ||company_name.includes("localhost") || company_name.length == 0 || (typeof (company_name) == 'undefined')){
-        company_name = "localhost"
-    }
-    else{
-        company_name= company_name.split("/")[2]
-    }
+    // if (company_name.includes("127.0.0.1") ||company_name.includes("localhost") || company_name.length == 0 || (typeof (company_name) == 'undefined')){
+    //     company_name = "localhost"
+    // }
+    // else{
+    //     company_name= company_name.split("/")[2]
+    // }
     
     console.log(company_name.length);
     console.log(company_name);
