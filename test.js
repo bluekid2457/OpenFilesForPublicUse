@@ -33,6 +33,11 @@ const generateResponse = (chatElement) => {
     // console.log(window.parent.location.href);
     // company_name = window.location.href;
     company_name =  document.location.ancestorOrigins[0];
+    console.log("Printing");
+    console.log(window.frameElement.getAttribute("Name"));
+    console.log(window.frameElement.getAttribute("Title"));
+    console.log(window.frameElement.getAttribute("id"));
+    console.log(window.name);
     // Define the properties and message for the API request
     // const requestOptions = {
     //     method: "GET",
@@ -97,7 +102,7 @@ const handleChat = () => {
     
     setTimeout(() => {
         // Display "Thinking..." message while waiting for the response
-        const incomingChatLi = createChatLi("Analyzing...", "incoming");
+        const incomingChatLi = createChatLi("...", "incoming");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
